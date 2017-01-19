@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heris</title>
+    <%= csrf_meta_tags %>
+   
+   <!-- include stylesheets -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'style.css' %>
+    <%= stylesheet_link_tag 'nav.css' %>
+
+    <!-- included javascript tags -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'cbpGRidGallery.js' %>
+    <%= javascript_include_tag 'classie.js' %>
+    <%= javascript_include_tag 'jbone.js' %>
+
+
+    <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+  </head>
+
+  <body>
+
+  <!--start-main-->
+           <div class="header">
+		        <div class="header-top">
+			        <div class="container">
+						<div class="logo">
+							<a href="index.html"><h1>HERIS CORP</h1></a>
+						</div>
+						<div class="search">
+							<form>
+								<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+								<input type="submit" value="">
+							</form>
+						</div>
+						<div class="social">
+							<ul>
+								<li><a href="#" class="facebook"> </a></li>
+								<li><a href="#" class="facebook twitter"> </a></li>
+								<li><a href="#" class="facebook chrome"> </a></li>
+								<li><a href="#" class="facebook in"> </a></li>
+								<li><a href="#" class="facebook beh"> </a></li>
+								<li><a href="#" class="facebook vem"> </a></li>
+								<li><a href="#" class="facebook yout"> </a></li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<!--head-bottom-->
+<!--head-bottom-->
+<section class="navigation">
+  <div id="toggle"><span></span></div>
+  <div id="menu">
+    <span id="title">Menu</span>
+    <ul>
+      <li><a href="index.html"><span>Home</span></a></li>
+      <li><a href="#about"><span>About</span></a></li>
+      <li><a href="#events"><span>Events</span></a></li>
+      <li><a href="#portfolio"><span>Portfolio</span></a></li>
+      <li><a href="#team"><span>Our Team</span></a></li>
+      <li><a href="#news"><span>News</span></a></li>
+      <li><a href="#contact"><span>Contact</span></a></li>
+    </ul>
+  </div>
+</section>  
+    <%= yield %>
+
+    <script>
+  $("#toggle").click(function() {
+  $(this).toggleClass("open");
+  $("#menu").toggleClass("opened");
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $("#menu a,#blog a,.footer-about a").on('click', function(event) {
+
+  // Store hash
+  var hash = this.hash;
+
+  // Using jQuery's animate() method to add smooth page scroll
+  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+  $('html, body').animate({
+    scrollTop: $(hash).offset().top
+  }, 1000, function(){
+
+    // Add hash (#) to URL when done scrolling (default click behavior)
+    window.location.hash = hash;
+    });
+  });
+})
+</script>
+  </body>
+</html>
